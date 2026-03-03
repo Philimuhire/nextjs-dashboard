@@ -1,4 +1,6 @@
 import bcrypt from 'bcrypt';
+
+export const dynamic = 'force-dynamic';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 import { sql } from '../lib/db';
 
