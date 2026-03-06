@@ -8,7 +8,7 @@ import { sql } from '@/app/lib/db';
 
 async function getUser(email: string): Promise<User | undefined> {
   try {
-    const user = await sql`SELECT * FROM users WHERE email=${email}`;
+    const user = (await sql`SELECT * FROM users WHERE email=${email}`) as Record<string, any>[];
     return user[0] as User | undefined;
   } catch (error) {
     console.error('Failed to fetch user:', error);
